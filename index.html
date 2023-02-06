@@ -1,98 +1,310 @@
----
-layout: page
-title: About
-weight: 1
---- 
-<center><img src="/lily-logo.png" alt="test image" width="40%" height="40%"></center>
-  <header class="post-header">
-    <h2 class="post-title">Language, Information, and Learning at Yale (LILY)</h2>
-  </header>
-
-
-  <div class = "row">
-    <div class = "">
-      <p align="left"> <div class="left"> This is the website for the LILY (Language, Information, and Learning at Yale) Lab at the Department of Computer Science, Yale University.</div> </p>
+<!DOCTYPE html> <!--Author: Pranav Rajpurkar 2016-->
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <title>SpokenWOZ</title>
+<!--    <meta name="description" content="Yale Spider is a large dataset for complex and cross-domain semantic parsing and text-to-SQL Task introduced by our EMNLP 2018 paper. It was annotated by 11 Yale students. It can be used for developing natural language interfaces for relational databases">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!--    <link rel="shortcut icon" href="images/spider_logo.png" />-->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="canonical" href="#">
+    <!--- <link rel="alternate" type="application/rss+xml" title="yale-lily.github.io" href="http://yale-lily.github.io//feed.xml"> --->
+    <script type="text/javascript" src="js/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bib-list.js"></script>
+    <!-- <link rel="stylesheet" href="/bib-publication-list.css" type="text/css" /> -->
+    <link rel="stylesheet" href="css/spider.css" type="text/css" />
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top" id="topNavbar" role="navigation">
+    <div class="container clearfix">
+        <!--<div class="rightNav">
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a>Home</a></li>
+                </ul>
+            </div>
+        </div>-->
+        <div class="leftNav">
+            <div class="brandDiv">
+                <a class="navbar-brand" href="#">SpokenWOZ</a>
+<!--                <a href="#"><img src="images/lily-logo.png" alt="test image" height="40" /></a>-->
+            </div>
+        </div>
+    </div>
 </div>
+<div class="cover" id="topCover">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="appTitle">
+                    SpokenWOZ
+<!--                    <img src="images/spider_logo.png" alt="test image" height="100" />-->
+                </h1>
+            </div>
+            <h2 id="appSubtitle">A Large-Scale Speech-Text Dataset for Spoken Task-Oriented Dialogue in Multi-Domains</h2>
+        </div>
+    </div>
+</div>
+<div class="cover" id="contentCover">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="infoCard">
+                    <div class="infoBody">
+                        <div class="infoHeadline">
+                            <h2>What is SpokenWOZ?</h2>
+                        </div>
+                        <p align="left">
+                        <div class="left">
+                        SpokenWOZ is a large-scale multi-domain dual-modal benchmark for spoken task-oriented dialogue modeling, which consists of 204k turns, 5.7k dialogues and 243 hours audios from realistic human-to-human spoken conversations.
+                        </div>
+                        </p>
+                        <div class="infoHeadline">
+                            <h2>Why SpokenWOZ?</h2>
+                        </div>
+                        <p align="left">
+                        <div class="left">
+                        The majority of existing TOD datasets are constructed via writing or paraphrasing from annotators rather than being collected from realistic spoken conversations.
+                        </br>The written TDO datasets may not be representative of the way people naturally speak in real-world conversations, and make it difficult to train and evaluate models that are specifically designed for spoken TOD. Additionally, the robustness issue, such as ASR noise, also can not be fully explored using these written TOD datasets.
+                        </br>Different exsiting spoken TOD datasets, we introduce common spoken characteristics in SpokenWOZ, such like word-by-word processing and commonsense reasoning in spoken language. SpokenWOZ also includes cross-turn and reasoning-required slot detectiona new challenges to better handle these spoken characteristics.
+                        </div>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="infoCard">
+                    <div class="infoBody">
+                        <div class="infoHeadline">
+                            <h2>Leadboard - Dialogue State Tracking</h2>
+                        </div>
+                        <p align="left">
+                        <div class="left">
+                        We use the joint goal accuracy (JGA) to evaluate DST task, which measures the ratio of dialogue turns for which the value of each slot is correctly predicted.
+                        </br>Challenges of DST in spoken dialogue include robustness against noisy text, cross-turn slot and reasoning-required slot.
+                    </div>
+                        </p>
+                        <table class="table performanceTable">
+                            <tr>
+                                <th>Rank</th>
+                                <th>Model</th>
+                                <th>JGA</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>SPACE + WavLM align</td>
+                                <td>25.65</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>SPACE + WavLM</td>
+                                <td>24.09</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>SPACE</td>
+                                <td>22.73</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>UBAR</td>
+                                <td>20.54</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>SPACE + WavLM +TriPy</td>
+                                <td>18.71</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>SPACE + TriPy</td>
+                                <td>16.24</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>BERT + TriPy</td>
+                                <td>14.78</td>
+                            </tr>
+                        </table>
+                        <div class="infoHeadline">
+                            <h2>Leadboard - Response Generation</h2>
+                        </div>
+                        <p align="left">
+                        <div class="left">
+                        The next challenges becomes the response generation component, including policy optimization and end-to-end modeling.
+                        </br>We use INFORM, SUCCESS, BLEU and Combined Score to evaluate generated response.
+                        </div>
+                        </p>
+                        <div class="infoHeadline">
+                            <h2>Policy Optimization</h2>
+                        </div>
+                        <p align="left">
+                        <div class="left">
+                        In policy optimization task, given the utterances and the dialogue state, the dialogue system is expected to optimize conversation policy and give high quality responses.
+                        </div>
+                        </p>
+                        <table class="table performanceTable">
+                            <tr>
+                                <th>Rank</th>
+                                <th>Model</th>
+                                <th>INFORM</th>
+                                <th>SUCCESS</th>
+                                <th>BLEU</th>
+                                <th>Comb</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>SPACE + WavLM align</td>
+                                <td>77.20</td>
+                                <td>59.20</td>
+                                <td>19.81</td>
+                                <td>88.01</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>SPACE + WavLM</td>
+                                <td>76.80</td>
+                                <td>58.40</td>
+                                <td>18.54</td>
+                                <td>86.14</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>SPACE</td>
+                                <td>76.00</td>
+                                <td>57.60</td>
+                                <td>18.72</td>
+                                <td>85.52</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>GALAXY</td>
+                                <td>70.60</td>
+                                <td>42.20</td>
+                                <td>16.52</td>
+                                <td>72.92</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>UBAR</td>
+                                <td>60.20</td>
+                                <td>47.40</td>
+                                <td>9.90</td>
+                                <td>63.70</td>
+                            </tr>
+
+                        </table>
+
+                        <div class="infoHeadline">
+                            <h2>End-to-end Modeling</h2>
+                        </div>
+                        <p align="left">
+                        <div class="left">
+                        In end-to-end modeling task, given the utterance from the user, the dialogue system is expected to give the right response.
+                        </div>
+                        </p>
+                        <table class="table performanceTable">
+                            <tr>
+                                <th>Rank</th>
+                                <th>Model</th>
+                                <th>INFORM</th>
+                                <th>SUCCESS</th>
+                                <th>BLEU</th>
+                                <th>Comb</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>SPACE + WavLM align</td>
+                                <td>68.30</td>
+                                <td>52.10</td>
+                                <td>22.12</td>
+                                <td>82.32</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>SPACE + WavLM</td>
+                                <td>67.20</td>
+                                <td>51.30</td>
+                                <td>21.46</td>
+                                <td>80.71</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>SPACE</td>
+                                <td>66.40</td>
+                                <td>50.60</td>
+                                <td>21.34</td>
+                                <td>79.84</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>GALAXY</td>
+                                <td>65.80</td>
+                                <td>38.50</td>
+                                <td>20.10</td>
+                                <td>72.25</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>UBAR</td>
+                                <td>62.50</td>
+                                <td>48.10</td>
+                                <td>9.69</td>
+                                <td>64.99</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-  <div class = "row">
-    <div class = "">
-      <p align="left"> <div class="left"> <i><b>NEWS</b></i> </div> </p>
-    <ul>
-      <li><b><font color="red">Oct 2022</font></b> We have 8 papers accepted to EMNLP 2022, including 7 in the main session and 1 in Findings! Stay tuned for the links. 	    
-      <li><b><font color="red">July 2022</font></b> Check out our papers at <a href="https://aclanthology.org/events/naacl-2022">NAACL 2022</a>.
-      <li><b><font color="red">May 2022</font></b> Congratulations to Yixin for winning an "outstanding demo paper" at ACL 2022! Check it out <a href="https://www.2022.aclweb.org/best-demo-paper-award">here</a>!
-	    <li><b><font color="red">Apr 2022</font></b> Our new toolkit <a href="https://github.com/Yale-LILY/EHRKit-2022">EHRKit</a> is released. Check it out!
-	    <li><b><font color="red">Apr 2022</font></b> Three papers accepted to NAACL 2022! KAT: A Knowledge Augmented Transformer for Vision-and-Language, Investigating Crowdsourcing Protocols for Evaluating the Factual Consistency of Summaries, and CONFIT: Toward Faithful Dialogue Summarization with Linguistically-Informed Contrastive Fine-tuning!
-	    <li><b><font color="red">Feb 2022</font></b> Four papers accepted to ACL 2022! BRIO: Bringing Order to Abstractive Summarization, DYLE: Dynamic Latent Extraction for Abstractive Long-Input Summarization, Summ^N: A Multi-Stage Summarization Framework for Long Input Dialogues and Documents, and Variational Graph Autoencoding as Cheap Supervision for AMR Coreference Resolution!
-	    <li><b><font color="red">Feb 2022</font></b> The Github repository for BRIO is <a href="https://github.com/yixinL7/BRIO">released</a>. Check it out!
-	    <li><b><font color="red">Nov 2021</font></b> Our SummerTime repository is <a href="https://pypi.org/project/summertime/">online</a> and pip-installable now. Check it out!
-	    <li><b><font color="red">Aug 2021</font></b> Three papers accepted to EMNLP! Mitigating False-Negative Contexts in Multi-document Question Answering with Retrieval Marginalization, An Exploratory Study on Long Dialogue Summarization: What Works and What’s Next, and SummerTime: Text Summarization Toolkit for Non-experts!
-	    <li><b><font color="red">Jun 2021</font></b> One paper accepted to TACL! FeTaQA: Free-form Table Question Answering!
-	    <li><b><font color="red">Jun 2021</font></b> A new release of <a href="https://aan.how">AAN</a>, our NLP search endine, is available. More than 20,000 resources are currently indexed there. We have a <a href="https://medium.com/lily-lab/aan-how-aan-new-version-release-b4eaad7e026c">blog post</a> with more details.
-	    <li><b><font color="red">Jun 2021</font></b> A new release of <a href="https://github.com/Yale-LILY/LectureBank">LectureBank</a> is now available.
-	    <li><b><font color="red">Jun 2021</font></b> A new release of <a href="https://github.com/Yale-LILY/TutorialBank">TutorialBank</a> is now available.
-	    <li><b><font color="red">May 2021</font></b> Three papers accepted to ACL 2021! ConvoSumm: Conversation Summarization Benchmark and Improved Abstractive Summarization with Argument Mining, Unsupervised Cross-Domain Prerequisite Chain Learning using Variational Graph Autoencoders, and BookSum: A Collection of Datasets for Long-form Narrative Summarization!
-	    <li><b><font color="red">Apr 2021</font></b> Our SummEval repository is <a href="https://pypi.org/project/summ-eval/">online</a> and pip-installable now. Check it out!
-	    <li><b><font color="red">Apr 2021</font></b> One <a href="https://www.nature.com/articles/s41746-021-00437-0">paper</a> published at npj digital medicine: COVID-19 information retrieval with deep-learning based semantic search, question answering, and abstractive summarization!
-	    <li><b><font color="red">Apr 2021</font></b> Our new dataset FeTaQA: Free-form Table Question Answering has been released <a href="https://github.com/Yale-LILY/FeTaQA">online</a> now! Check it out!
-	    <li><b><font color="red">Apr 2021</font></b> We updated <a href="aan.how">aan.how</a>, which now has over 16k manually-curated resources on NLP and related topics!
-	    <li><b><font color="red">Apr 2021</font></b> Khera Awarded Career Development Grant from National Heart, Lung, and Blood Institute!
-	    <li><b><font color="red">Mar 2021</font></b> Three papers accepted to NAACL! Improving Zero and Few-Shot Abstractive Summarization with Intermediate Fine-tuning and Data Augmentation, DART: Open-Domain Structured Data Record to Text Generation, and QMSum: A New Benchmark for Query-based Multi-domain Meeting Summarization!
-	    <li><b><font color="red">Mar 2021</font></b> Two papers accepted to ICLR! GraPPa: Grammar-Augmented Pre-Training for Table Semantic Parsing and SCoRe: Pre-Training for Context Representation in Conversational Semantic Parsing!
-	    <li><b><font color="red">Mar 2021</font></b> Tao Yu has successfully defended his PhD dissertation on semantic parsing for natural language interfaces. Congratulations to Dr. Yu!
-	    <li><b><font color="red">Feb 2021</font></b> Alex Fabbri has successfully defended his PhD dissertation on natural language processing for text summarization. Congratulations to Dr. Fabbri!
-    </ul>
-      <p align="left"> <div class="left"> The LILY Lab started in Spring 2017 with Professor <a href="http://www.cs.yale.edu/homes/radev/"> Dragomir Radev </a> joining Yale University. Our interests include:</div> </p>
-    
-    <ul>
-        <li> Natural Language Processing </li>
-        <ul>
-            
-            <li> Summarization </li>
-            <li> Semantic Parsing </li>
-            <li> Question Answering </li>
-	    <li> Dialogue Systems </li>
-            <li> Information Retrieval </li>
-            <li> Graph Methods for NLP and IR </li>
-            <li> Logical Reasoning </li>
-	    <li> Language Grounding </li>
-            <li> Natural Language Generation </li>
-	    <li> NLP for Database Access </li>
-	    <li> NLP for Code Generation </li>
-		
-        </ul>
-        <li> Machine Learning </li> 
-        <ul>
-            <li> Neural Networks </li>
-            <li> Semi-Supervised Learning </li>
-	    <li> Multimodal Machine Learning </li>
-        </ul>
-    </ul>
+<!--<footer class="site-footer">
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">yale-lily.github.io</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list">
+                    <li>yale-lily.github.io</li>
+                    <li><a href="mailto:dragomir.radev@yale.edu">dragomir.radev@yale.edu</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+                <ul class="social-media-list">
+
+                    <li>
+                        <a href="https://github.com/Yale-LILY"><span class="icon icon&#45;&#45;github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">Yale-LILY</span></a>
+
+                    </li>
 
 
-    <!-- 
 
-    <ul>
-        <li> Natural Language Processing </li>
-        <ul>
-            <li> Information Retrieval </li>
-            <li> Summarization </li>
-            <li> Multilingual Parsing </li>
-            <li> Dialogue Systems </li>
-            <li> Question Answering </li>
-            <li> Humor Detection </li>
-        </ul>
-        <li> Machine Learning </li> 
-        <ul>
-            <li> Neural Networks </li>
-            <li> Semi-supervised Learning </li>
-        </ul>
-    </ul>
+                </ul>
+            </div>
 
-    -->
+            <div class="footer-col footer-col-3">
+                <p>Website for the LILY Group at Yale University
+                </p>
+            </div>
+        </div>
 
+    </div>
 
-</div>
-</div>
+</footer>-->
 
+</body>
+</html>
