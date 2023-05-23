@@ -47,7 +47,7 @@
 <!--                    <img src="images/spider_logo.png" alt="test image" height="100" />-->
                 </h1>
             </div>
-            <h2 id="appSubtitle">A Large-Scale Speech-Text Dataset for Spoken Task-Oriented Dialogue in Multi-Domains</h2>
+            <h2 id="appSubtitle">A Large-Scale Speech-Text Benchmark for Spoken Task-Oriented Dialogue in Multiple Domains</h2>
         </div>
     </div>
 </div>
@@ -62,7 +62,7 @@
                         </div>
                         <p align="left">
                         <div class="left">
-                        SpokenWOZ is a large-scale multi-domain dual-modal benchmark for spoken task-oriented dialogue modeling, which consists of 204k turns, 5.7k dialogues and 243 hours audios from realistic human-to-human spoken conversations.
+                        SpokenWOZ is a large-scale multi-domain dual-modal benchmark for spoken task-oriented dialogue modeling, which consists of 203k turns, 5.7k dialogues and 249 hours audios from realistic human-to-human spoken conversations.
                         </div>
                         </p>
                         <div class="infoHeadline">
@@ -90,7 +90,7 @@
                         <div class="left">
                         We use the joint goal accuracy (JGA) to evaluate DST task, which measures the ratio of dialogue turns for which the value of each slot is correctly predicted.
                         </br>Challenges of DST in spoken dialogue include robustness against noisy text, cross-turn slot and reasoning-required slot.
-                    </div>
+                        </div>
                         </p>
                         <table class="table performanceTable">
                             <tr>
@@ -100,7 +100,7 @@
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td>SPACE + WavLM align</td>
+                                <td>SPACE + WavLM$_{<sub>align</sub>}$</td>
                                 <td>25.65</td>
                             </tr>
                             <tr>
@@ -134,6 +134,28 @@
                                 <td>14.78</td>
                             </tr>
                         </table>
+                        <p align="left">
+                        <div class="left">
+                            Zero-shot Performances of LLMs：
+                        </div>
+                        </p>
+                        <table class="table performanceTable">
+                            <tr>
+                                <th>Rank</th>
+                                <th>Model</th>
+                                <th>JGA</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>InstructGPT$_{003}$</td>
+                                <td>14.15</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>ChatGPT</td>
+                                <td>13.75</td>
+                            </tr>
+                        </table>
                         <div class="infoHeadline">
                             <h2>Leadboard - Response Generation</h2>
                         </div>
@@ -162,7 +184,7 @@
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td>SPACE + WavLM align</td>
+                                <td>SPACE + WavLM$_{<sub>align</sub>}$</td>
                                 <td>77.20</td>
                                 <td>59.20</td>
                                 <td>19.81</td>
@@ -222,7 +244,7 @@
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td>SPACE + WavLM align</td>
+                                <td>SPACE + WavLM$_{<sub>align</sub>}$</td>
                                 <td>68.30</td>
                                 <td>52.10</td>
                                 <td>22.12</td>
